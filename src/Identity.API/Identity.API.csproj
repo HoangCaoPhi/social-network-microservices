@@ -12,17 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Post.Domain\Post.Domain.csproj" />
-    <ProjectReference Include="..\Post.Infrastructure\Post.Infrastructure.csproj" />
-    <ProjectReference Include="..\Shared\Shared.csproj" />
     <ProjectReference Include="..\SocialNetwork.ServiceDefaults\SocialNetwork.ServiceDefaults.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Application\Features\" />
-    <Folder Include="Application\Behaviors\" />
-    <Folder Include="Application\DomainEventHandlers\" />
-    <Folder Include="Endpoints\" />
   </ItemGroup>
 
 </Project>

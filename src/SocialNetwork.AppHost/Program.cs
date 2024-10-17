@@ -13,4 +13,6 @@ builder.AddProject<Projects.Notification_API>("notification-api");
 builder.AddProject<Projects.webapp_client>("webapp-client");
 builder.AddProject<Projects.WebApp_Server>("webapp-server");
 
+builder.AddProject<Projects.Identity_API>("identity-api");
+
 builder.Build().Run();
