@@ -52,6 +52,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Post.Presentation", "src\Se
 EndProject
 Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "webapp.client", "src\webapp.client\webapp.client.esproj", "{FD6F1AC1-49ED-4FD6-848E-0B7C833801AB}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Etc", "Etc", "{639B680A-6E16-4B66-B536-11991A1CD4DF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{FB14C7D6-C17D-4659-83EC-7CD7B9E97B1C}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -149,6 +156,7 @@ Global
 		{3B0BE83B-6132-4A66-AA1E-C8A57EA5E699} = {9A0C4A55-1A47-4B71-82B4-22C0D12188B1}
 		{5F7746B6-6399-4A5B-830E-807B628CF08C} = {9A0C4A55-1A47-4B71-82B4-22C0D12188B1}
 		{47521C7F-2102-4E92-8D7D-312548393531} = {9A0C4A55-1A47-4B71-82B4-22C0D12188B1}
+		{FB14C7D6-C17D-4659-83EC-7CD7B9E97B1C} = {639B680A-6E16-4B66-B536-11991A1CD4DF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D9207FBE-2290-4C9C-9525-B845DA8D594E}
