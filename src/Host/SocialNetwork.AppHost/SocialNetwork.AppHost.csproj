@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <IsAspireHost>true</IsAspireHost>
+    <UserSecretsId>ae905d00-7f8f-4eff-b5de-13bfe806a153</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Aspire.Hosting.AppHost" Version="8.1.0" />
+    <PackageReference Include="Aspire.Hosting.Keycloak" Version="8.2.1-preview.1.24473.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Services\Category\Category.API\Category.API.csproj" />
+    <ProjectReference Include="..\..\Services\Comment\Comment.API\Comment.API.csproj" />
+    <ProjectReference Include="..\..\Services\Like\Like.API\Like.API.csproj" />
+    <ProjectReference Include="..\..\Services\Notification\Notification.API\Notification.API.csproj" />
+    <ProjectReference Include="..\..\Services\Post\Post.API\Post.API.csproj" />
+    <ProjectReference Include="..\..\webapp.client\webapp.client.esproj" />
+    <ProjectReference Include="..\ApiGateway\ApiGateway.csproj" />
+  </ItemGroup>
+
+</Project>

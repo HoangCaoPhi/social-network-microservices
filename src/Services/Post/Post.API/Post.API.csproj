@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.10" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Post.Application\Post.Application.csproj" />
+    <ProjectReference Include="..\Post.Infrastructure\Post.Infrastructure.csproj" />
+    <ProjectReference Include="..\Post.Presentation\Post.Presentation.csproj" />
+    <ProjectReference Include="..\..\..\BuildingBlocks\SocialNetwork.ServiceDefaults\SocialNetwork.ServiceDefaults.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Application\Features\" />
+    <Folder Include="Application\Behaviors\" />
+    <Folder Include="Application\DomainEventHandlers\" />
+    <Folder Include="Endpoints\" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,25 @@
+﻿a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+.modal-body {
+  max-height: 300px; /* Set a max height for the modal body */
+  overflow-y: auto;  /* Enable vertical scrolling if content exceeds max height */
+  white-space: pre-wrap; /* Maintain whitespace formatting and wrap text */
+  word-wrap: break-word; /* Break long words to fit within the container */
+}
