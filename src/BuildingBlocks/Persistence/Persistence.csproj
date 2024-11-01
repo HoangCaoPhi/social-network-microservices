@@ -1,13 +1,15 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
- 
-  <ItemGroup>
-    <ProjectReference Include="..\Shared\Shared.csproj" />
-  </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="MySql\" />
-    <Folder Include="MongoDb\" />
-    <Folder Include="Abtractions\" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\Shared\Shared.csproj" />
+	</ItemGroup>
 
+	<ItemGroup>
+		<Folder Include="MySql\" />
+		<Folder Include="MongoDb\" />
+	</ItemGroup>
+	
+	<ItemGroup>
+		<PackageReference Include="Aspire.Microsoft.EntityFrameworkCore.SqlServer" />
+	</ItemGroup>
 </Project>

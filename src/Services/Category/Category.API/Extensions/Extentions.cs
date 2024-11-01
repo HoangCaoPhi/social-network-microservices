@@ -1,4 +1,6 @@
-﻿using SocialNetwork.ServiceDefaults.Extensions;
+﻿using Category.API.Infrastructure.Context;
+using Shared.Constants;
+using SocialNetwork.ServiceDefaults.Extensions;
 
 namespace Category.API.Extensions;
 
@@ -8,5 +10,10 @@ public static class Extentions
     {
         var services = builder.Services;
         builder.AddDefaultAuthentication();
+
+        builder.AddSqlServerService<CategoryDbContext>(options =>
+        {
+            options.ConnectionStringSection = ConnectionStringSection.CategoryDb;
+        });
     }
 }

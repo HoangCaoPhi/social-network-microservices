@@ -52,7 +52,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Post.Presentation", "src\Se
 EndProject
 Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "webapp.client", "src\webapp.client\webapp.client.esproj", "{FD6F1AC1-49ED-4FD6-848E-0B7C833801AB}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Etc", "Etc", "{639B680A-6E16-4B66-B536-11991A1CD4DF}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{639B680A-6E16-4B66-B536-11991A1CD4DF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{FB14C7D6-C17D-4659-83EC-7CD7B9E97B1C}"
 	ProjectSection(SolutionItems) = preProject

@@ -2,6 +2,7 @@ using Asp.Versioning;
 using Category.API;
 using Category.API.Extensions;
 using SocialNetwork.ServiceDefaults.Extensions;
+using Web.Api.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -35,6 +36,7 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+    app.ApplyMigrations();  
 }
 
 var apiVersionSet = app
