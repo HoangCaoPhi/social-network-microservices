@@ -59,11 +59,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{FB14C7D6-C
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "src\BuildingBlocks\Application\Application.csproj", "{B66C7D39-5E49-4151-B956-88DFEA5D5B5F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "src\BuildingBlocks\Application\Application.csproj", "{B66C7D39-5E49-4151-B956-88DFEA5D5B5F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistence", "src\BuildingBlocks\Persistence\Persistence.csproj", "{F08AD55D-4383-4E41-8DD9-D6A9DA932F61}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Persistence", "src\BuildingBlocks\Persistence\Persistence.csproj", "{F08AD55D-4383-4E41-8DD9-D6A9DA932F61}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "src\BuildingBlocks\Domain\Domain.csproj", "{16C74E15-9051-453F-B755-F64A81CCE491}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "src\BuildingBlocks\Domain\Domain.csproj", "{16C74E15-9051-453F-B755-F64A81CCE491}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Center", "Center", "{DAD76F77-FF4B-4CF5-B915-38D22E20927C}"
+	ProjectSection(SolutionItems) = preProject
+		Directory.Build.props = Directory.Build.props
+		Directory.Packages.props = Directory.Packages.props
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -178,6 +184,7 @@ Global
 		{B66C7D39-5E49-4151-B956-88DFEA5D5B5F} = {ECA61A73-EAA1-450E-A4FC-7F4767032373}
 		{F08AD55D-4383-4E41-8DD9-D6A9DA932F61} = {ECA61A73-EAA1-450E-A4FC-7F4767032373}
 		{16C74E15-9051-453F-B755-F64A81CCE491} = {ECA61A73-EAA1-450E-A4FC-7F4767032373}
+		{DAD76F77-FF4B-4CF5-B915-38D22E20927C} = {639B680A-6E16-4B66-B536-11991A1CD4DF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D9207FBE-2290-4C9C-9525-B845DA8D594E}

@@ -26,7 +26,7 @@ public static class EndpointExtensions
        RouteGroupBuilder? routeGroupBuilder)
        where T : IEndpoint
     {
-        IEnumerable<T> endpoints = app.Services.GetRequiredService<IEnumerable<T>>();
+        var endpoints = app.Services.GetRequiredService<IEnumerable<T>>();
 
         IEndpointRouteBuilder builder = routeGroupBuilder is null ? app : routeGroupBuilder;
 
