@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace Category.API.Infrastructure.Configurations;
+namespace Category.API.Infrastructure.Configurations.Write;
 
 public class CategoryConfiguration : IEntityTypeConfiguration<Models.Category>
 {

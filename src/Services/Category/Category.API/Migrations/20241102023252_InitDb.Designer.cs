@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Category.API.Migrations
 {
-    [DbContext(typeof(CategoryDbContext))]
+    [DbContext(typeof(CategoryWriteDbContext))]
     [Migration("20241102023252_InitDb")]
     partial class InitDb
     {

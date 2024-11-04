@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Category.API.Migrations
 {
-    [DbContext(typeof(CategoryDbContext))]
+    [DbContext(typeof(CategoryWriteDbContext))]
     partial class CategoryDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
