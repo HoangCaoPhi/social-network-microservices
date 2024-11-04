@@ -1,55 +1,68 @@
-﻿using System.Diagnostics.CodeAnalysis;
+﻿using System.Text.Json.Serialization;
 
 namespace Shared;
 
-public interface IBaseResult
-{
-    bool IsSuccess { get; }
-    Error Error { get; }
-}
-
+public interface IBaseResult;
 public class Result : IBaseResult
 {
-    public Result(bool isSuccess, Error error)
+    protected Result()
     {
-        if (isSuccess && error != Error.None ||
-            !isSuccess && error == Error.None)
-        {
-            throw new ArgumentException("Invalid error", nameof(error));
-        }
+        IsSuccess = true;
+        Error = default;
+    }
 
-        IsSuccess = isSuccess;
+    protected Result(Error error)
+    {
+        IsSuccess = false;
         Error = error;
     }
 
     public bool IsSuccess { get; }
 
-    public bool IsFailure => !IsSuccess;
+    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+    public Error? Error { get; }
 
-    public Error Error { get; }
+    public static implicit operator Result(Error error) =>
+        new(error);
 
-    public static Result Success() => new(true, Error.None);
+    public static Result Success() =>
+        new();
 
-    public static Result<TValue> Success<TValue>(TValue value) =>
-        new(value, true, Error.None);
-
-    public static Result Failure(Error error) => new(false, error);
-
-    public static Result<TValue> Failure<TValue>(Error error) =>
-        new(default, false, error);
+    public static Result Failure(Error error) =>
+        new(error);
 }
 
-public class Result<TValue>(TValue? value, bool isSuccess, Error error) : 
-    Result(isSuccess, error), IBaseResult
+public sealed class Result<TValue> : Result
 {
-    [NotNull]
-    public TValue Value => IsSuccess
-        ? value!
-        : throw new InvalidOperationException("The value of a failure result can't be accessed.");
+    private readonly TValue? _value;
 
-    public static implicit operator Result<TValue>(TValue? value) =>
-        value is not null ? Success(value) : Failure<TValue>(Error.NullValue);
+    private Result(
+        TValue value
+    ) : base()
+    {
+        _value = value;
+    }
 
-    public static Result<TValue> ValidationFailure(Error error) =>
-        new(default, false, error);
+    private Result(
+        Error error
+    ) : base(error)
+    {
+        _value = default;
+    }
+
+    public TValue Value =>
+        IsSuccess ? _value! : throw new InvalidOperationException("Value can not be accessed when IsSuccess is false");
+
+    public static implicit operator Result<TValue>(Error error) =>
+        new(error);
+
+    public static implicit operator Result<TValue>(TValue value) =>
+        new(value);
+
+    public static Result<TValue> Success(TValue value) =>
+        new(value);
+
+    public static new Result<TValue> Failure(Error error) =>
+        new(error);
 }
+ 

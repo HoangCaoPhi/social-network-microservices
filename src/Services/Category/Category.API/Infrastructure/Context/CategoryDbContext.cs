@@ -10,7 +10,7 @@ public class CategoryDbContext(DbContextOptions<CategoryDbContext> options,
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-         
+        modelBuilder.ApplyConfigurationsFromAssembly(typeof(IAssemblyMarker).Assembly);
     }
 
     protected override void ConfigureConventions(ModelConfigurationBuilder configurationBuilder)

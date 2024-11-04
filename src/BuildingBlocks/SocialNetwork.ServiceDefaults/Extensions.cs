@@ -6,6 +6,8 @@ using Microsoft.Extensions.Logging;
 using OpenTelemetry;
 using OpenTelemetry.Metrics;
 using OpenTelemetry.Trace;
+using SocialNetwork.ServiceDefaults.ErrorHandling;
+using SocialNetwork.ServiceDefaults.Extensions;
 
 namespace Microsoft.Extensions.Hosting;
 
@@ -30,6 +32,8 @@ public static class Extensions
             // Turn on service discovery by default
             http.AddServiceDiscovery();
         });
+
+        builder.AddAppServices();
 
         return builder;
     }
@@ -105,7 +109,19 @@ public static class Extensions
                 Predicate = r => r.Tags.Contains("live")
             });
         }
+ 
+        app.UseExceptionHandler();
 
         return app;
+    }
+
+    public static IHostApplicationBuilder AddAppServices(this IHostApplicationBuilder builder)
+    {       
+        builder.Services.AddProblemDetails();
+        builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
+
+        builder.AddFluentValidationValidation();
+       
+        return builder;
     }
 }

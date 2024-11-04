@@ -1,7 +1,9 @@
 using Asp.Versioning;
 using Category.API;
 using Category.API.Extensions;
+using SharpGrip.FluentValidation.AutoValidation.Endpoints.Extensions;
 using SocialNetwork.ServiceDefaults.Extensions;
+using SocialNetwork.ServiceDefaults.Filters;
 using Web.Api.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,17 +15,22 @@ builder.AddServiceDefaults();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddApiVersioning(options =>
+builder.Services
+    .AddApiVersioning(options =>
     {
-        options.DefaultApiVersion = new(1, 0);
-        options.ApiVersionReader = new UrlSegmentApiVersionReader();
+        options.DefaultApiVersion = new ApiVersion(1, 0);  
+        options.AssumeDefaultVersionWhenUnspecified = true;  
+        options.ReportApiVersions = true; 
+        options.ApiVersionReader = ApiVersionReader.Combine( 
+            new HeaderApiVersionReader("X-Api-Version")  
+        );
     })
     .AddApiExplorer(options =>
     {
-        options.GroupNameFormat = "'v'V";
+        options.GroupNameFormat = "'v'VVV";
         options.SubstituteApiVersionInUrl = true;
-    });
-
+    }); ;
+ 
 builder.Services.AddMinimalEndpoints(typeof(IAssemblyMarker).Assembly);
 builder.AddApplicationServices();
  
@@ -42,13 +49,14 @@ if (app.Environment.IsDevelopment())
 var apiVersionSet = app
     .NewApiVersionSet()
     .HasApiVersion(new(1, 0))
-    .HasApiVersion(new(2, 0))
     .ReportApiVersions()
     .Build();
 
 var groupBuilder = app
-    .MapGroup("/api/v{apiVersion:apiVersion}")
-    .WithApiVersionSet(apiVersionSet);
+    .MapGroup("/api")
+    .WithApiVersionSet(apiVersionSet)
+    .AddFluentValidationAutoValidation()
+    .AddEndpointFilter<ApiResponseFilter>();
 
 app.MapMinimalEndpoints(groupBuilder);
 

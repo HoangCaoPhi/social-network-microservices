@@ -1,24 +1,22 @@
 ﻿namespace Shared;
-public record Error
+public class Error
 {
-    public static readonly Error None = new(string.Empty, string.Empty, ErrorType.Failure);
-    public static readonly Error NullValue = new(
-        "General.Null",
-        "Null value was provided",
-        ErrorType.Failure);
-
-    public Error(string code, string description, ErrorType type)
+    private Error(
+        string code,
+        string description,
+        ErrorType errorType
+    )
     {
         Code = code;
         Description = description;
-        Type = type;
+        ErrorType = errorType;
     }
 
     public string Code { get; }
 
     public string Description { get; }
 
-    public ErrorType Type { get; }
+    public ErrorType ErrorType { get; }
 
     public static Error Failure(string code, string description) =>
         new(code, description, ErrorType.Failure);
@@ -26,9 +24,15 @@ public record Error
     public static Error NotFound(string code, string description) =>
         new(code, description, ErrorType.NotFound);
 
-    public static Error Problem(string code, string description) =>
-        new(code, description, ErrorType.Problem);
+    public static Error Validation(string code, string description) =>
+        new(code, description, ErrorType.Validation);
 
     public static Error Conflict(string code, string description) =>
         new(code, description, ErrorType.Conflict);
+
+    public static Error AccessUnAuthorized(string code, string description) =>
+        new(code, description, ErrorType.AccessUnAuthorized);
+
+    public static Error AccessForbidden(string code, string description) =>
+        new(code, description, ErrorType.AccessForbidden);
 }

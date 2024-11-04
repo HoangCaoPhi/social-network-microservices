@@ -1,12 +1,23 @@
-﻿namespace Category.API.Models;
+﻿using Domain;
 
-public sealed class Category
+namespace Category.API.Models;
+
+public sealed class Category : Entity
 {
-    public Ulid Id { get; init; }
-
     public required string Name { get; init; }
 
     public string? Description { get; init; }    
 
     public CategoryStatus Status { get; init; }
+
+    public static Category Create(string name, string description)
+    {
+        return new Category()
+        {
+            Id = Ulid.NewUlid(),
+            Name = name,
+            Description = description,
+            Status = CategoryStatus.Inactive,
+        };
+    }
 }

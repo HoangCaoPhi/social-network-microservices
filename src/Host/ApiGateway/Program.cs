@@ -12,7 +12,11 @@ builder.AddServiceDefaults();
 builder
     .Services.AddBff()
     .AddRemoteApis();
- 
+
+builder.Services.AddReverseProxy()
+    .LoadFromConfig(builder.Configuration.GetSection("ReverseProxy"))
+    .AddBffExtensions();
+
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultScheme = "cookie";
@@ -53,6 +57,8 @@ app.UseAuthentication();
 app.UseBff();
 app.UseAuthorization();
 app.MapBffManagementEndpoints();
+app.MapDefaultEndpoints();
+app.MapBffReverseProxy();
 
 app.MapGet("/api/auth/access-token", async (HttpContext context) =>
 {
@@ -64,6 +70,11 @@ app.MapGet("/api/auth/access-token", async (HttpContext context) =>
 })
 .RequireAuthorization()
 .AsBffApiEndpoint();
+
+app.MapGet("/Test", () =>
+{
+    return "Test Endpoint";
+});
 
 // Comment this out to use the external api
 app.MapGroup("/api/todos")

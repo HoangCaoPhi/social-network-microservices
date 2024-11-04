@@ -19,9 +19,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Microsoft.AspNetCore.SpaProxy">
-		</PackageReference>
-		<PackageReference Include="Duende.BFF"/>
+		<PackageReference Include="Microsoft.AspNetCore.SpaProxy"></PackageReference>
+		<!--<PackageReference Include="Duende.BFF"/>-->
 		<PackageReference Include="Duende.BFF.Yarp"/>
 		<PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" />
 	</ItemGroup>
