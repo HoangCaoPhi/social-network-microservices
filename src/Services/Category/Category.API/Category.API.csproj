@@ -12,8 +12,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\..\BuildingBlocks\Application\Application.csproj" />
     <ProjectReference Include="..\..\..\BuildingBlocks\Domain\Domain.csproj" />
-    <ProjectReference Include="..\..\..\BuildingBlocks\Persistence\Persistence.csproj" />
-    <ProjectReference Include="..\..\..\BuildingBlocks\Shared\Shared.csproj" />
+    <ProjectReference Include="..\..\..\BuildingBlocks\Persistence\Infrastructure.csproj" />
     <ProjectReference Include="..\..\..\BuildingBlocks\SocialNetwork.ServiceDefaults\SocialNetwork.ServiceDefaults.csproj" />
   </ItemGroup>
 

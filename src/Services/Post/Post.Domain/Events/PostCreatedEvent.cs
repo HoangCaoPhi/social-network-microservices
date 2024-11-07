@@ -1,4 +1,4 @@
-﻿namespace Post.Domain.Events;
-internal class PostCreatedEvent
-{
-}
+﻿using Domain;
+
+namespace Post.Domain.Events;
+public record PostCreatedEvent(Ulid Id) : IDomainEvent;

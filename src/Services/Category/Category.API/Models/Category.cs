@@ -3,13 +3,21 @@ using Shared;
 
 namespace Category.API.Models;
 
-public sealed class Category : Entity
+public sealed class Category : Entity, IAuditableEntity
 {
     public string Name { get; private set; }
 
     public string? Description { get; private set; }    
 
     public CategoryStatus Status { get; private set; }
+
+    public DateTime CreatedAt { get; private set; }
+
+    public DateTime? ModifiedAt { get; private set; }
+    
+    public string? CreatedBy { get; private set; }
+
+    public string? ModifiedBy { get; private set; }
 
     public static Category Create(string name, string? description)
     {

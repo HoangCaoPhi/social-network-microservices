@@ -10,7 +10,7 @@ public static class MigrationExtensions
         using var scope = app.Services.CreateScope();
 
         var dbContext = scope.ServiceProvider.GetRequiredService<CategoryWriteDbContext>();
-
-        //dbContext.Database.Migrate();
+ 
+        dbContext.Database.Migrate();
     }
 }

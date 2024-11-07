@@ -3,5 +3,10 @@
   <ItemGroup>
     <PackageReference Include="MediatR" />
   </ItemGroup>
+ 
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\BuildingBlocks\Domain\Domain.csproj" />
+    <ProjectReference Include="..\..\..\BuildingBlocks\Shared\Shared.csproj" />
+  </ItemGroup>
 
 </Project>

@@ -5,8 +5,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<Folder Include="MySql\" />
-		<Folder Include="MongoDb\" />
+		<Folder Include="Persistence\MongoDb\" />
 	</ItemGroup>
 	
 	<ItemGroup>

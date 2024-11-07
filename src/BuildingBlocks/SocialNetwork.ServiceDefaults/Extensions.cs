@@ -121,7 +121,8 @@ public static class Extensions
         builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
 
         builder.AddFluentValidationValidation();
-       
+        builder.AddAuthToken();
+
         return builder;
     }
 }

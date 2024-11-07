@@ -1,7 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace Persistence.SqlServer;
+namespace Infrastructure.Persistence.SqlServer;
 public static class AddSqlServerServiceExtensions
 {
     public static void AddWriteDbContext<TContext>(this IHostApplicationBuilder builder, Action<SqlServerOptions> options)
@@ -10,7 +11,14 @@ public static class AddSqlServerServiceExtensions
         var sqlServerOptions = new SqlServerOptions();
         options(sqlServerOptions);
 
-        builder.AddSqlServerDbContext<TContext>(sqlServerOptions.ConnectionStringSection);
+        builder.Services.AddSingleton<UpdateAuditableEntityInterceptor>();
+ 
+        builder.AddSqlServerDbContext<TContext>(
+            connectionName: sqlServerOptions.ConnectionStringSection,
+            configureDbContextOptions: options =>
+            {                
+                options.AddInterceptors(builder.Services.BuildServiceProvider().GetService<UpdateAuditableEntityInterceptor>()!);
+            });
     }
 
     public static void AddReadDbContext<TContext>(this IHostApplicationBuilder builder, Action<SqlServerOptions> options)
@@ -20,7 +28,7 @@ public static class AddSqlServerServiceExtensions
         options(sqlServerOptions);
 
         builder.AddSqlServerDbContext<TContext>(
-            sqlServerOptions.ConnectionStringSection,
+            connectionName: sqlServerOptions.ConnectionStringSection,
             configureDbContextOptions: options =>
             {
                 options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);

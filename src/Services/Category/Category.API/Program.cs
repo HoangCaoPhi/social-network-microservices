@@ -56,7 +56,8 @@ var groupBuilder = app
     .MapGroup("/api")
     .WithApiVersionSet(apiVersionSet)
     .AddFluentValidationAutoValidation()
-    .AddEndpointFilter<ApiResponseFilter>();
+    .AddEndpointFilter<ApiResponseFilter>()
+    .RequireAuthorization();
 
 app.MapMinimalEndpoints(groupBuilder);
 

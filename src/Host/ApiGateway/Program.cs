@@ -58,7 +58,7 @@ app.UseBff();
 app.UseAuthorization();
 app.MapBffManagementEndpoints();
 app.MapDefaultEndpoints();
-app.MapBffReverseProxy();
+app.MapReverseProxy();
 
 app.MapGet("/api/auth/access-token", async (HttpContext context) =>
 {

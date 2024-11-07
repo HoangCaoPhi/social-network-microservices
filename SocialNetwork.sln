@@ -61,7 +61,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{FB14C7D6-C
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "src\BuildingBlocks\Application\Application.csproj", "{B66C7D39-5E49-4151-B956-88DFEA5D5B5F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Persistence", "src\BuildingBlocks\Persistence\Persistence.csproj", "{F08AD55D-4383-4E41-8DD9-D6A9DA932F61}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "src\BuildingBlocks\Persistence\Infrastructure.csproj", "{F08AD55D-4383-4E41-8DD9-D6A9DA932F61}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "src\BuildingBlocks\Domain\Domain.csproj", "{16C74E15-9051-453F-B755-F64A81CCE491}"
 EndProject

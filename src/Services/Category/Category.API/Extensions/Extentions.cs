@@ -1,5 +1,6 @@
 ﻿using Category.API.Infrastructure.Context;
 using FluentValidation;
+using Infrastructure.Persistence.SqlServer;
 using Shared.Constants;
 using SocialNetwork.ServiceDefaults.Extensions;
 namespace Category.API.Extensions;
