@@ -8,6 +8,7 @@ on:
   push:
     branches:
       - main
+      - develop
     paths-ignore:
       - '**.md'
       - 'src/webapp.client**'      
