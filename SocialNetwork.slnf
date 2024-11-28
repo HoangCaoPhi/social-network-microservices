@@ -1,0 +1,25 @@
+{
+  "solution": {
+    "path": "SocialNetwork.sln",
+    "projects": [
+      "src\\BuildingBlocks\\Application\\Application.csproj",
+      "src\\BuildingBlocks\\Domain\\Domain.csproj",
+      "src\\BuildingBlocks\\EventBus\\EventBus.csproj",
+      "src\\BuildingBlocks\\Persistence\\Infrastructure.csproj",
+      "src\\BuildingBlocks\\Shared\\Shared.csproj",
+      "src\\BuildingBlocks\\SocialNetwork.ServiceDefaults\\SocialNetwork.ServiceDefaults.csproj",
+      "src\\Components\\EventBusKafka\\EventBusKafka.csproj",
+      "src\\Host\\ApiGateway\\ApiGateway.csproj",
+      "src\\Host\\SocialNetwork.AppHost\\SocialNetwork.AppHost.csproj",
+      "src\\Services\\Category\\Category.API\\Category.API.csproj",
+      "src\\Services\\Comment\\Comment.API\\Comment.API.csproj",
+      "src\\Services\\Like\\Like.API\\Like.API.csproj",
+      "src\\Services\\Notification\\Notification.API\\Notification.API.csproj",
+      "src\\Services\\Post\\Post.API\\Post.API.csproj",
+      "src\\Services\\Post\\Post.Application\\Post.Application.csproj",
+      "src\\Services\\Post\\Post.Domain\\Post.Domain.csproj",
+      "src\\Services\\Post\\Post.Infrastructure\\Post.Infrastructure.csproj",
+      "src\\Services\\Post\\Post.Presentation\\Post.Presentation.csproj",
+    ]
+  }
+}

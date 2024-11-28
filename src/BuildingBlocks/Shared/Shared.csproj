@@ -1,6 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
  
   <ItemGroup>
+    <PackageReference Include="System.Text.Encodings.Web" />
     <PackageReference Include="Ulid" />
 	<PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" />
   </ItemGroup>

@@ -11,7 +11,7 @@ public class Post : AggregateRoot, IAuditableEntity
 
     public string Content { get; private set; }
 
-    public string CategoryId { get; private set; }
+    public Ulid CategoryId { get; private set; }
 
     public string CategoryName { get; private set; }
 
@@ -26,9 +26,7 @@ public class Post : AggregateRoot, IAuditableEntity
     public IEnumerable<Tag> Tags { get; private set; }
 
     public DateTime CreatedAt { get; private set; }
-
-    public string CreateBy { get; private set; }
-
+ 
     public DateTime? ModifiedAt { get; private set; }
 
     public string? CreatedBy { get; private set; }
