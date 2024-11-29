@@ -12,7 +12,7 @@ internal sealed class DeleteEndpoint : IEndpoint
 
     public void MapEndpoint(IEndpointRouteBuilder app)
     {
-        app.MapDelete("{id:guid}", async (Ulid id, CategoryWriteDbContext context) =>
+        app.MapDelete("{id:guid}", async (Guid id, CategoryWriteDbContext context) =>
         {
             var category = await context.Categories.FirstOrDefaultAsync(x => x.Id == id);
 

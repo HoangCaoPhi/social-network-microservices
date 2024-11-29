@@ -5,6 +5,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<Folder Include="Abtractions\" />
 		<Folder Include="Persistence\MongoDb\" />
 	</ItemGroup>
 	

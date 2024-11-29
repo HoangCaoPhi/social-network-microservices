@@ -17,11 +17,8 @@ public static class Extentions
             options.ConnectionStringSection = ConnectionStringSection.CategoryDb;
         });
 
-        builder.AddReadDbContext<CategoryReadDbContext>(options =>
-        {
-            options.ConnectionStringSection = ConnectionStringSection.CategoryDb;            
-        });
-
         services.AddValidatorsFromAssembly(typeof(IAssemblyMarker).Assembly);
+
+        services.AddScoped<CategoryReadDbContext>();
     }
 }

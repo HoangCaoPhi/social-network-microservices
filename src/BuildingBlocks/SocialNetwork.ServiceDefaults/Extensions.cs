@@ -6,6 +6,8 @@ using Microsoft.Extensions.Logging;
 using OpenTelemetry;
 using OpenTelemetry.Metrics;
 using OpenTelemetry.Trace;
+using Shared.Services;
+using SocialNetwork.ServiceDefaults.Abtractions;
 using SocialNetwork.ServiceDefaults.ErrorHandling;
 using SocialNetwork.ServiceDefaults.Extensions;
 
@@ -122,6 +124,8 @@ public static class Extensions
 
         builder.AddFluentValidationValidation();
         builder.AddAuthToken();
+
+        builder.Services.AddSingleton<IGuidGenerator, GuidGenerator>();
 
         return builder;
     }

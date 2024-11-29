@@ -3,5 +3,5 @@
 namespace Domain;
 public interface IDomainEvent : INotification
 {
-    public Ulid Id { get; init; }
+    public Guid Id { get; init; }
 }

@@ -19,11 +19,11 @@ public sealed class Category : Entity, IAuditableEntity
 
     public string? ModifiedBy { get; private set; }
 
-    public static Category Create(string name, string? description)
+    public static Category Create(Guid id, string name, string? description)
     {
         return new Category()
         {
-            Id = Ulid.NewUlid(),
+            Id = id,
             Name = name,
             Description = description,
             Status = CategoryStatus.Inactive,

@@ -3,8 +3,8 @@
 public abstract class Entity
 {
     int? _requestedHashCode;
-    Ulid _Id;
-    public virtual Ulid Id
+    Guid _Id;
+    public virtual Guid Id
     {
         get
         {

@@ -10,14 +10,14 @@ public sealed class Update : IEndpoint
     public string GroupEntityEndpoint() => Endpoint.Category;
     public void MapEndpoint(IEndpointRouteBuilder app)
     {
-        app.MapPut("{id}", async (Ulid id, 
+        app.MapPut("{id}", async (Guid id, 
                               CategoryUpdateRequest updatedCategory,
                               CategoryWriteDbContext dbContext) =>
         {
             var category = await dbContext.Categories.FirstOrDefaultAsync(x => x.Id == id);
 
             if (category is null)
-                return Result<Ulid>.Failure(CategoryErrors.NotFound);
+                return Result<Guid>.Failure(CategoryErrors.NotFound);
 
             category.Update(updatedCategory.Name,
                             updatedCategory.Description,
@@ -25,7 +25,7 @@ public sealed class Update : IEndpoint
 
             await dbContext.SaveChangesAsync();
 
-            return Result<Ulid>.Success(category.Id);
+            return Result<Guid>.Success(category.Id);
         });      
     }
 }

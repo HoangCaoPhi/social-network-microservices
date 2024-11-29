@@ -1,10 +1,10 @@
 ﻿using Microsoft.AspNetCore.Http;
 using System.Security.Claims;
 
-namespace Shared;
+namespace Shared.Identity;
 public class IdentityService(IHttpContextAccessor httpContext) : IIdentityService
 {
-    public string? GetUserIdentity() => 
+    public string? GetUserIdentity() =>
         httpContext.HttpContext?.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
 
     public string? GetFullName() =>
@@ -12,9 +12,9 @@ public class IdentityService(IHttpContextAccessor httpContext) : IIdentityServic
         httpContext.HttpContext?.User.FindFirst(ClaimTypes.Name)?.Value;
 
 
-    public string? GetEmail() => 
+    public string? GetEmail() =>
         httpContext.HttpContext?.User.FindFirst(ClaimTypes.Email)?.Value;
 
-    public bool IsAdminRole() => 
+    public bool IsAdminRole() =>
         httpContext.HttpContext?.User.IsInRole("Admin") ?? false;
 }

@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Persistence.Abtractions;
 
 namespace Category.API.Infrastructure.Context;
 
@@ -13,12 +12,5 @@ public class CategoryWriteDbContext(DbContextOptions<CategoryWriteDbContext> opt
         modelBuilder.ApplyConfigurationsFromAssembly(
             typeof(IAssemblyMarker).Assembly,
             type => type.FullName?.Contains("Configurations.Write") ?? false);
-    }
-
-    protected override void ConfigureConventions(ModelConfigurationBuilder configurationBuilder)
-    {
-        configurationBuilder
-            .Properties<Ulid>()
-            .HaveConversion<UlidToStringConverter>();
-    }
+    } 
 }

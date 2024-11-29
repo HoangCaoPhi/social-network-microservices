@@ -10,7 +10,7 @@ public sealed class GetOneEndpoint : IEndpoint
     public string GroupEntityEndpoint() => Endpoint.Category;
     public void MapEndpoint(IEndpointRouteBuilder app)
     {
-        app.MapGet("{categoryId}", async (Ulid categoryId, CategoryReadDbContext context) => {
+        app.MapGet("{categoryId}", async (Guid categoryId, CategoryReadDbContext context) => {
 
             var category = await context
                                     .GetCategories()

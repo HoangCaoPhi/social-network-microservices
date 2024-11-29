@@ -11,7 +11,7 @@ public class Post : AggregateRoot, IAuditableEntity
 
     public string Content { get; private set; }
 
-    public Ulid CategoryId { get; private set; }
+    public Guid CategoryId { get; private set; }
 
     public string CategoryName { get; private set; }
 

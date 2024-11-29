@@ -1,10 +1,10 @@
 using Asp.Versioning;
 using Category.API;
 using Category.API.Extensions;
+using Category.API.Infrastructure.Context;
 using SharpGrip.FluentValidation.AutoValidation.Endpoints.Extensions;
 using SocialNetwork.ServiceDefaults.Extensions;
 using SocialNetwork.ServiceDefaults.Filters;
-using Web.Api.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -43,7 +43,7 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
-    app.ApplyMigrations();  
+    app.ApplyMigrations<CategoryWriteDbContext>();  
 }
 
 var apiVersionSet = app
@@ -56,8 +56,8 @@ var groupBuilder = app
     .MapGroup("/api")
     .WithApiVersionSet(apiVersionSet)
     .AddFluentValidationAutoValidation()
-    .AddEndpointFilter<ApiResponseFilter>()
-    .RequireAuthorization();
+    .AddEndpointFilter<ApiResponseFilter>();
+    //.RequireAuthorization();
 
 app.MapMinimalEndpoints(groupBuilder);
 

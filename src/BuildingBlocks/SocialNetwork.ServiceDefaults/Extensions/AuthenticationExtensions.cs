@@ -3,6 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Shared;
 using Shared.Constants;
+using Shared.Identity;
 
 namespace SocialNetwork.ServiceDefaults.Extensions;
 public static class AuthenticationExtensions
@@ -35,7 +36,8 @@ public static class AuthenticationExtensions
 
         services.AddAuthorization();
 
-        services.AddScoped<IIdentityService, IdentityService>();
+        //services.AddScoped<IIdentityService, IdentityService>();
+        services.AddScoped<IIdentityService, TempIdentityService>();
         return services;
     }
  

@@ -12,7 +12,7 @@ internal sealed class ActiveEndpoint : IEndpoint
 
     public void MapEndpoint(IEndpointRouteBuilder app)
     {
-        app.MapPatch("{categoryId}/active", async (Ulid categoryId, CategoryWriteDbContext context) =>
+        app.MapPatch("{categoryId}/active", async (Guid categoryId, CategoryWriteDbContext context) =>
         {
             var category = await context.Categories.FirstOrDefaultAsync(x => x.Id == categoryId);
 

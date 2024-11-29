@@ -11,7 +11,7 @@ public sealed class DeactiveEndpoint : IEndpoint
     public string GroupEntityEndpoint() => Endpoint.Category;
     public void MapEndpoint(IEndpointRouteBuilder app)
     {
-        app.MapPatch("{categoryId}/deactive", async (Ulid categoryId, CategoryWriteDbContext context) =>
+        app.MapPatch("{categoryId}/deactive", async (Guid categoryId, CategoryWriteDbContext context) =>
         {
             var category = await context.Categories.FirstOrDefaultAsync(x => x.Id == categoryId);
 
