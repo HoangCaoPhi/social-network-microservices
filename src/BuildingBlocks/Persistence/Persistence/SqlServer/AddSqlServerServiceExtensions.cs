@@ -20,18 +20,4 @@ public static class AddSqlServerServiceExtensions
                 options.AddInterceptors(builder.Services.BuildServiceProvider().GetService<UpdateAuditableEntityInterceptor>()!);
             });
     }
-
-    public static void AddReadDbContext<TContext>(this IHostApplicationBuilder builder, Action<SqlServerOptions> options)
-       where TContext : DbContext
-    {
-        var sqlServerOptions = new SqlServerOptions();
-        options(sqlServerOptions);
-
-        builder.AddSqlServerDbContext<TContext>(
-            connectionName: sqlServerOptions.ConnectionStringSection,
-            configureDbContextOptions: options =>
-            {
-                options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
-            });
-    }
 }

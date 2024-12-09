@@ -46,4 +46,6 @@ builder.AddNpmApp("web-ui", "../../webapp.client", "dev")
        .WithExternalHttpEndpoints()
        .PublishAsDockerFile();
 
+builder.AddProject<Projects.EmailService>("emailservice");
+
 builder.Build().Run();

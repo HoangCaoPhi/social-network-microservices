@@ -20,6 +20,7 @@
 	<ItemGroup>
 		<ProjectReference Include="..\..\Services\Category\Category.API\Category.API.csproj" />
 		<ProjectReference Include="..\..\Services\Comment\Comment.API\Comment.API.csproj" />
+		<ProjectReference Include="..\..\Services\Email\EmailService\EmailService.csproj" />
 		<ProjectReference Include="..\..\Services\Like\Like.API\Like.API.csproj" />
 		<ProjectReference Include="..\..\Services\Notification\Notification.API\Notification.API.csproj" />
 		<ProjectReference Include="..\..\Services\Post\Post.API\Post.API.csproj" />

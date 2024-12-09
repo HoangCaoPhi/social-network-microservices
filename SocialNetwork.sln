@@ -71,6 +71,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Center", "Center", "{DAD76F
 		Directory.Packages.props = Directory.Packages.props
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Email", "Email", "{1AB265EE-5142-421D-B5F5-1ABD5A9722D1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailService", "src\Services\Email\EmailService\EmailService.csproj", "{7D845ABA-C412-4D88-AF17-3086CC06683A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -155,6 +159,10 @@ Global
 		{16C74E15-9051-453F-B755-F64A81CCE491}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{16C74E15-9051-453F-B755-F64A81CCE491}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{16C74E15-9051-453F-B755-F64A81CCE491}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D845ABA-C412-4D88-AF17-3086CC06683A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D845ABA-C412-4D88-AF17-3086CC06683A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D845ABA-C412-4D88-AF17-3086CC06683A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D845ABA-C412-4D88-AF17-3086CC06683A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -185,6 +193,8 @@ Global
 		{F08AD55D-4383-4E41-8DD9-D6A9DA932F61} = {ECA61A73-EAA1-450E-A4FC-7F4767032373}
 		{16C74E15-9051-453F-B755-F64A81CCE491} = {ECA61A73-EAA1-450E-A4FC-7F4767032373}
 		{DAD76F77-FF4B-4CF5-B915-38D22E20927C} = {639B680A-6E16-4B66-B536-11991A1CD4DF}
+		{1AB265EE-5142-421D-B5F5-1ABD5A9722D1} = {2B67FFA7-AD9B-4FE3-965B-44E02CA221D2}
+		{7D845ABA-C412-4D88-AF17-3086CC06683A} = {1AB265EE-5142-421D-B5F5-1ABD5A9722D1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D9207FBE-2290-4C9C-9525-B845DA8D594E}
